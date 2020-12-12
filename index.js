@@ -14,7 +14,7 @@ app.get('/posts', (req, res) => {
   res.status(200).send(posts);
 });
 
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
@@ -54,7 +54,7 @@ app.post('/events', (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log('v60 - updated');
+  console.log('v1000');
   // This port will be exposed on the k8s/posts-srv.yaml
   console.log('POSTS_SERVICE: Listening on port 4000');
 });
